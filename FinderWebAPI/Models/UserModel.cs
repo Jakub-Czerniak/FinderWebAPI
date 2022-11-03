@@ -1,0 +1,21 @@
+﻿using static System.Net.Mime.MediaTypeNames;
+
+namespace FinderWebAPI.Models
+{
+    public class UserModel
+    {
+        public int Id { get; set; }
+        public string Name { get; set; } = string.Empty;
+        public string Email { get; set; } = string.Empty;
+        public string Password { get; set; } = string.Empty;
+        public string Gender { get; set; } = string.Empty;
+        public byte[]? Photo { get; set; } 
+        public DateTime LastActive { get; set; }
+        public bool InterestedM { get; set; }
+        public bool InterestedF { get; set; }
+        public string AboutMe { get; set; } = string.Empty;
+        public List<InterestModel> Interests { get; set; } = new List<InterestModel>();
+        public int MinAgePreference { get; set; }
+        public int MaxAgePreference { get; set; }
+    }
+}
