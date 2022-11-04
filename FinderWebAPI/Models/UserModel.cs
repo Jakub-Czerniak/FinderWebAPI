@@ -17,5 +17,7 @@ namespace FinderWebAPI.Models
         public List<InterestModel> Interests { get; set; } = new List<InterestModel>();
         public int MinAgePreference { get; set; }
         public int MaxAgePreference { get; set; }
+        public DateTime Birthday { get; set; }
+        public int Age { get; set; }
     }
 }

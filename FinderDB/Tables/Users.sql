@@ -12,5 +12,6 @@ LastActive DATETIME2 NOT NULL,
 AboutMe VARCHAR(255),
 MinAgePreference INT NOT NULL,
 MaxAgePreference INT NOT NULL,
-
+Birthday DATETIME2 NOT NULL,
+UNIQUE(Email)
 )

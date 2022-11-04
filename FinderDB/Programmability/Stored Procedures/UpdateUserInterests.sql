@@ -1,6 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[UpdateUserInterests]
-	@param1 int = 0,
-	@param2 int
+﻿CREATE PROCEDURE UpdateUserInterests @InterestName VARCHAR(255), @Email VARCHAR(255), @Password VARCHAR(255)
 AS
-	SELECT @param1, @param2
-RETURN 0
+	INSERT INTO UsersInterests(UserID, InterestID) VALUES ((SELECT ID FROM Users WHERE @Email = Users.Email AND @Password = Users.[Password]), (SELECT ID FROM Interests WHERE Interests.Name = @InterestName) ) 
+GO

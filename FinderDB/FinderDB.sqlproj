@@ -75,5 +75,8 @@
     <Build Include="Programmability\Stored Procedures\UpdateUserPhoto.sql" />
     <Build Include="Programmability\Stored Procedures\UpdateUserInterestedIn.sql" />
     <Build Include="Programmability\Stored Procedures\RemoveUser.sql" />
+    <Build Include="Programmability\Stored Procedures\UpdateUserDetails.sql" />
+    <Build Include="Programmability\Stored Procedures\CheckEmailUnique.sql" />
+    <Build Include="Programmability\Stored Procedures\FindAllInterests.sql" />
   </ItemGroup>
 </Project>
