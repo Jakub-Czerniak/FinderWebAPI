@@ -3,7 +3,7 @@ AS
 UPDATE Users SET Users.LastActive = (SELECT GETDATE()) WHERE Users.ID = @User1_ID
 IF EXISTS
 (
-	SELECT * FROM pairs
+	SELECT * FROM Pairs
 	WHERE User1ID = @User2_ID AND User2ID = @User1_ID
 )
 BEGIN 

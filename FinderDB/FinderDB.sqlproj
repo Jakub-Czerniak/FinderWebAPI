@@ -66,17 +66,17 @@
     <Build Include="Tables\Pairs.sql" />
     <Build Include="Tables\UsersInterests.sql" />
     <Build Include="Programmability\Stored Procedures\FindBestMatchByInterests.sql" />
-    <Build Include="Programmability\Stored Procedures\FindInterestsByUserID.sql" />
-    <Build Include="Programmability\Stored Procedures\FindMatchedUsersById.sql" />
+    <Build Include="Programmability\Stored Procedures\FindUserInterests.sql" />
+    <Build Include="Programmability\Stored Procedures\FindMatchedUsers.sql" />
     <Build Include="Programmability\Stored Procedures\SendDecision.sql" />
     <Build Include="Programmability\Stored Procedures\RegisterUser.sql" />
     <Build Include="Programmability\Stored Procedures\LoginUser.sql" />
-    <Build Include="Programmability\Stored Procedures\UpdateUserInterests.sql" />
-    <Build Include="Programmability\Stored Procedures\UpdateUserPhoto.sql" />
-    <Build Include="Programmability\Stored Procedures\UpdateUserInterestedIn.sql" />
     <Build Include="Programmability\Stored Procedures\RemoveUser.sql" />
-    <Build Include="Programmability\Stored Procedures\UpdateUserDetails.sql" />
+    <Build Include="Programmability\Stored Procedures\UpdateUser.sql" />
     <Build Include="Programmability\Stored Procedures\CheckEmailUnique.sql" />
     <Build Include="Programmability\Stored Procedures\FindAllInterests.sql" />
+    <Build Include="Programmability\Stored Procedures\InsertUserInterest.sql" />
+    <Build Include="Programmability\Stored Procedures\DeleteUsersInterests.sql" />
+    <Build Include="Programmability\Stored Procedures\LoadUserDetails.sql" />
   </ItemGroup>
 </Project>

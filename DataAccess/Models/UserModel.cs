@@ -9,7 +9,7 @@ namespace FinderWebAPI.Models
         public string Email { get; set; } = string.Empty;
         public string Password { get; set; } = string.Empty;
         public string Gender { get; set; } = string.Empty;
-        public byte[]? Photo { get; set; } 
+        public byte[] Photo { get; set; } 
         public DateTime LastActive { get; set; }
         public bool InterestedM { get; set; }
         public bool InterestedF { get; set; }

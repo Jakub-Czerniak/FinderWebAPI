@@ -1,6 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[RemoveUser]
-	@param1 int = 0,
-	@param2 int
+﻿CREATE PROCEDURE RemoveUser @Email VARCHAR(255), @Password VARCHAR(255)
 AS
-	SELECT @param1, @param2
-RETURN 0
+	DELETE FROM Users WHERE Users.Email = @Email AND Users.Password = @Password
+GO

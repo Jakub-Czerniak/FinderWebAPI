@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE FindInterestsByUserId (@UserID INT)
+﻿CREATE PROCEDURE FindUserInterests (@UserID INT)
 AS
 SELECT interests.ID,interests.name FROM interests
 INNER JOIN UsersInterests ON UsersInterests.InterestID = Interests.ID
