@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE RemoveUser @Email VARCHAR(255), @Password VARCHAR(255)
+﻿CREATE PROCEDURE RemoveUser @ID INT
 AS
-	DELETE FROM Users WHERE Users.Email = @Email AND Users.Password = @Password
+	DELETE FROM Users WHERE Users.ID = @ID
 GO

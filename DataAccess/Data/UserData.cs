@@ -1,5 +1,5 @@
 ﻿using DataAccess.DbAccess;
-using FinderWebAPI.Models;
+using DataAccess.Models;
 
 
 namespace DataAccess.Data
@@ -12,20 +12,6 @@ namespace DataAccess.Data
             _db = db;
         }
 
-        public async Task<UserModel?> LoginUser(string email, string password)
-        {
-            var result = await _db.LoadData<UserModel, dynamic>("LoginUser", new { Email = email, Password = password });
-
-            return result.FirstOrDefault();
-        }
-
-        public async Task<UserModel?> GetEmail(string email)
-        {
-            var result = await _db.LoadData<UserModel, dynamic>("CheckEmailUnique", new { Email = email });
-
-            return result.FirstOrDefault();
-        }
-
         public async Task<UserModel?> GetUser(int id)
         {
             var result = await _db.LoadData<UserModel, dynamic>("LoadUserDetails", new { ID = id });
@@ -33,28 +19,13 @@ namespace DataAccess.Data
             return result.FirstOrDefault();
         }
 
-        public async Task<UserModel?> GetBestMatch(int id)
-        {
-            var result = await _db.LoadData<UserModel, dynamic>("FindBestMatchByInterests", new { ID = id });
-
-            return result.FirstOrDefault();
-        }
-
-        public async Task<IEnumerable<UserModel>> GetMatchedUsers(int userID)
-        {
-            var result = await _db.LoadData<UserModel, dynamic>("FindMatchedUsers", new { ID = userID });
-
-            return result.ToList();
-        }
-
-
         public Task InsertUser(UserModel user) =>
             _db.SaveData("RegisterUser", new { user.Name, user.Email, user.Password, user.Gender, user.Photo, user.InterestedM, user.InterestedF, user.Birthday });
 
         public Task UpdateUser(UserModel user) =>
-            _db.SaveData("UpdateUser", new { });
+            _db.SaveData("UpdateUser", new {user.Email, user.Password, user.Photo, user.InterestedM, user.InterestedF, user.AboutMe, user.MinAgePreference, user.MaxAgePreference  });
 
-        public Task DeleteUser(UserModel user) =>
-            _db.SaveData("DeleteUser", new { });
+        public Task DeleteUser(int id) =>
+            _db.SaveData("DeleteUser", new { ID = id });
     }
 }

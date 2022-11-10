@@ -1,5 +1,5 @@
 ﻿using DataAccess.DbAccess;
-using FinderWebAPI.Models;
+using DataAccess.Models;
 
 namespace DataAccess.Data
 {
@@ -21,7 +21,7 @@ namespace DataAccess.Data
         public Task InsertUserInterest(int userID, int interestID) =>
             _db.SaveData("InsertUserInterest", new { UserID = userID, InterestID = interestID });
 
-        public Task DeleteUserInterest(int userID) =>
-            _db.SaveData("DeleteUserInterest", new { UserID = userID });
+        public Task DeleteUserInterests(int userID) =>
+            _db.SaveData("DeleteUserInterests", new { UserID = userID });
     }
 }

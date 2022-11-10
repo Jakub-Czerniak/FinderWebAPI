@@ -1,10 +1,5 @@
 ﻿using DataAccess.DbAccess;
-using FinderWebAPI.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using DataAccess.Models;
 
 namespace DataAccess.Data
 {
@@ -15,6 +10,13 @@ namespace DataAccess.Data
         public PairData(ISqlDataAccess db)
         {
             _db = db;
+        }
+
+        public async Task<IEnumerable<UserModel>> GetPairs(int id)
+        {
+            var result = await _db.LoadData<UserModel, dynamic>("FindMatchedUsers", new { ID = id });
+
+            return result.ToList();
         }
 
         public Task InsertDecision(PairModel pair) =>

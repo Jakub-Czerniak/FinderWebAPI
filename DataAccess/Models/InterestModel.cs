@@ -1,4 +1,4 @@
-﻿namespace FinderWebAPI.Models
+﻿namespace DataAccess.Models
 {
     public class InterestModel
     {

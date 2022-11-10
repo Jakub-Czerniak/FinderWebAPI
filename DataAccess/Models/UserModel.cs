@@ -1,6 +1,4 @@
-﻿using static System.Net.Mime.MediaTypeNames;
-
-namespace FinderWebAPI.Models
+﻿namespace DataAccess.Models
 {
     public class UserModel
     {
