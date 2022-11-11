@@ -10,7 +10,7 @@
             app.MapDelete("/Users/{id}", DeleteUser);
 
             app.MapGet("Users/{userID}/Interests", GetUserInterests);
-            app.MapPut("Users/{userID}/Interests/{InterestID}", InsertUserInterest);
+            app.MapPut("Users/{userID}/Interests", InsertUserInterest);
             app.MapDelete("Users/{userID}/Interests", DeleteUserInterests);
         }
 
@@ -80,11 +80,11 @@
             }
         }
 
-        private static async Task<IResult> InsertUserInterest(int userID, int interestID, IInterestData data)
+        private static async Task<IResult> InsertUserInterest(int userID, InterestModel interest, IInterestData data)
         {
             try
             { 
-                await data.InsertUserInterest(userID, interestID);
+                await data.InsertUserInterest(userID, interest.Id);
                 return Results.Ok();
             }
             catch (Exception ex)

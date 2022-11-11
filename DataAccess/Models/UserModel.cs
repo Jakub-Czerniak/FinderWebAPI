@@ -9,8 +9,8 @@
         public string Gender { get; set; } = string.Empty;
         public byte[] Photo { get; set; } 
         public DateTime LastActive { get; set; }
-        public bool InterestedM { get; set; }
-        public bool InterestedF { get; set; }
+        public string InterestedM { get; set; }
+        public string InterestedF { get; set; }
         public string AboutMe { get; set; } = string.Empty;
         public List<InterestModel> Interests { get; set; } = new List<InterestModel>();
         public int MinAgePreference { get; set; }
