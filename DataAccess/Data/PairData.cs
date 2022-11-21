@@ -20,6 +20,6 @@ namespace DataAccess.Data
         }
 
         public Task InsertDecision(PairModel pair) =>
-            _db.SaveData("SendDecision", pair);
+            _db.SaveData("SendDecision", new { pair.User1Id, pair.User2Id, pair.User1Decision});
     }
 }

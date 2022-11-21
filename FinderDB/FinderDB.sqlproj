@@ -76,7 +76,7 @@
     <Build Include="Programmability\Stored Procedures\CheckEmailUnique.sql" />
     <Build Include="Programmability\Stored Procedures\FindAllInterests.sql" />
     <Build Include="Programmability\Stored Procedures\InsertUserInterest.sql" />
-    <Build Include="Programmability\Stored Procedures\DeleteUsersInterests.sql" />
+    <Build Include="Programmability\Stored Procedures\DeleteUserInterests.sql" />
     <Build Include="Programmability\Stored Procedures\LoadUserDetails.sql" />
   </ItemGroup>
 </Project>

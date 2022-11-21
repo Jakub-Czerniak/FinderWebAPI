@@ -6,7 +6,7 @@ namespace FinderWebAPI.Apis
     {
         public static void ConfigureMatchEngineApi(this WebApplication app)
         {
-            app.MapPost("/MatchEngine", GetBestMatch);
+            app.MapPut("/MatchEngine", GetBestMatch);
         }
 
         private static async Task<IResult> GetBestMatch(MatchEngineModel matchEngine, IMatchEngineData data)

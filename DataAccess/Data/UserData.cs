@@ -23,9 +23,9 @@ namespace DataAccess.Data
             _db.SaveData("RegisterUser", new { user.Name, user.Email, user.Password, user.Gender, user.Photo, user.InterestedM, user.InterestedF, user.Birthday });
 
         public Task UpdateUser(UserModel user) =>
-            _db.SaveData("UpdateUser", new {user.Email, user.Password, user.Photo, user.InterestedM, user.InterestedF, user.AboutMe, user.MinAgePreference, user.MaxAgePreference  });
+            _db.SaveData("UpdateUser", new {user.Id, user.Photo, user.InterestedM, user.InterestedF, user.AboutMe, user.MinAgePreference, user.MaxAgePreference  });
 
         public Task DeleteUser(int id) =>
-            _db.SaveData("DeleteUser", new { ID = id });
+            _db.SaveData("RemoveUser", new { ID = id });
     }
 }

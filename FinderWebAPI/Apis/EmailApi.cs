@@ -4,14 +4,17 @@
     {
         public static void ConfigureEmailApi(this WebApplication app)
         {
-            app.MapPost("/Emails", EmailIsUnique);
+            app.MapPut("/Emails", EmailIsUnique);
         }
 
         private static async Task<IResult> EmailIsUnique(EmailModel email, IEmailData data)
         {
             try
             {
-                return Results.Ok(await data.EmailIsUnique(email));
+                var response = await data.EmailIsUnique(email);
+                if ( response == null)
+                    return Results.NotFound();
+                return Results.Ok(response);
             }
             catch (Exception ex)
             {

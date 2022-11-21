@@ -16,7 +16,7 @@ namespace DataAccess.Data
             _db.LoadData<InterestModel, dynamic>("FindAllInterests", new { });
 
         public Task<IEnumerable<InterestModel>> GetUserInterests(int id) =>
-            _db.LoadData<InterestModel, dynamic>("FindUserInterests", new { ID = id });
+            _db.LoadData<InterestModel, dynamic>("FindUserInterests", new { UserID = id });
 
         public Task InsertUserInterest(int userID, int interestID) =>
             _db.SaveData("InsertUserInterest", new { UserID = userID, InterestID = interestID });

@@ -1,23 +1,23 @@
-﻿CREATE PROCEDURE SendDecision (@User1_ID INT, @User2_ID INT, @User1_Decision VARCHAR(4))
+﻿CREATE PROCEDURE SendDecision (@User1ID INT, @User2ID INT, @User1Decision VARCHAR(4))
 AS
-UPDATE Users SET Users.LastActive = (SELECT GETDATE()) WHERE Users.ID = @User1_ID
+UPDATE Users SET Users.LastActive = (SELECT GETDATE()) WHERE Users.ID = @User1ID
 IF EXISTS
 (
 	SELECT * FROM Pairs
-	WHERE User1ID = @User2_ID AND User2ID = @User1_ID
+	WHERE User1ID = @User2ID AND User2ID = @User1ID
 )
 BEGIN 
-	IF EXISTS (SELECT * FROM pairs WHERE User1Decision='y' AND @User1_Decision='y' )
+	IF EXISTS (SELECT * FROM pairs WHERE User1Decision='like' AND @User1Decision='like' )
 	BEGIN
-		UPDATE pairs SET pairs.User2Decision = @User1_Decision, pairs.MatchDate=(SELECT GETDATE()) WHERE user1ID = @User2_ID AND user2ID = @User1_ID
+		UPDATE pairs SET pairs.User2Decision = @User1Decision, pairs.MatchDate=(SELECT GETDATE()) WHERE user1ID = @User2ID AND user2ID = @User1ID
 	END
 	ELSE
 	BEGIN
-		UPDATE pairs SET pairs.user2decision = @User1_Decision WHERE user1ID = @User2_ID AND user2ID = @User1_ID
+		UPDATE pairs SET pairs.user2decision = @User1Decision WHERE user1ID = @User2ID AND user2ID = @User1ID
 	END
 END
 ELSE
 BEGIN
-INSERT INTO pairs(user1ID, user2ID, user1decision) VALUES (@User1_ID, @User2_ID, @User1_Decision)
+INSERT INTO pairs(user1ID, user2ID, user1decision) VALUES (@User1ID, @User2ID, @User1Decision)
 END
 GO

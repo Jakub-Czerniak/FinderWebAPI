@@ -12,9 +12,9 @@ namespace DataAccess.Data
             _db = db;
         }
 
-        public async Task<UserModel?> GetBestMatch(MatchEngineModel matchEngine)
+        public async Task<MatchEngineModel?> GetBestMatch(MatchEngineModel matchEngine)
         {
-            var result = await _db.LoadData<UserModel, dynamic>("FindBestMatchByInterests", new { ID = matchEngine.UserID });
+            var result = await _db.LoadData<MatchEngineModel, dynamic>("FindBestMatchByInterests", new { UserID = matchEngine.UserID });
 
             return result.FirstOrDefault();
         }

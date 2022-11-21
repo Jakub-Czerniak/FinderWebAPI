@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE DeleteUsersInterests @UserID int 
+﻿CREATE PROCEDURE DeleteUserInterests @UserID int 
 AS
 	DELETE FROM UsersInterests WHERE UsersInterests.UserID = @UserID
 GO

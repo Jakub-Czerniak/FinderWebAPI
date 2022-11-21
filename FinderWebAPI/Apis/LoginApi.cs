@@ -4,7 +4,7 @@
     {
         public static void ConfigureLoginApi(this WebApplication app)
         {
-            app.MapPost("/Login", LoginUser);
+            app.MapPut("/Login", LoginUser);
         }
 
         private static async Task<IResult> LoginUser(LoginModel login ,ILoginData data)

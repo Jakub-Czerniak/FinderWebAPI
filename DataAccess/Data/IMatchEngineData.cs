@@ -4,6 +4,6 @@ namespace DataAccess.Data
 {
     public interface IMatchEngineData
     {
-        Task<UserModel?> GetBestMatch(MatchEngineModel matchEngine);
+        Task<MatchEngineModel?> GetBestMatch(MatchEngineModel matchEngine);
     }
 }

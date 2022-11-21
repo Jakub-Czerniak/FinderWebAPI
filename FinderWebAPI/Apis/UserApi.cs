@@ -5,8 +5,8 @@
         public static void ConfigureUserApi(this WebApplication app)
         {
             app.MapGet("/Users/{id}", GetUser);
-            app.MapPut("/Users", InsertUser);
-            app.MapPost("/Users", UpdateUser);
+            app.MapPost("/Users", InsertUser);
+            app.MapPut("/Users", UpdateUser);
             app.MapDelete("/Users/{id}", DeleteUser);
 
             app.MapGet("Users/{userID}/Interests", GetUserInterests);
